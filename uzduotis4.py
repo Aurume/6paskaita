@@ -7,12 +7,15 @@
 # Patarimas: import pickle
 
 zurnalas = []
+
 while True:
-    veiksmas = int(input("""1 - įvesti pajamas/išlaidas
+    veiksmas = int(input("""
+    1 - įvesti pajamas/išlaidas
     2 - parodyti pajamas/išlaidas
     3 - balansas
     0 - išeiti
     """))
+
     match veiksmas:
         case 1:
             suma = float(input("Įveskite sumą: "))
@@ -24,5 +27,5 @@ while True:
         case 0:
             print("Viso gero")
         case _:
-            print("Neteisingas veiksmas")
+            print("Neteisingas įvestas veiksmas")
 
