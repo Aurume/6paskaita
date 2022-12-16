@@ -1,19 +1,19 @@
 # Leistų vartotojui įvesti norimą eilučių kiekį
 # Leistų vartotojui įrašyti norimą kuriamo failo pavadinimą
 # Įrašytų įvestą tekstą atskiromis eilutėmis į failą
-# Patarimai:
 #
 # Sukurti while ciklą, kuris užsibaigtų tik įvedus vartotojui tuščią eilutę (nuspaudus ENTER)
-tekstas = ""
+
+eilutes = ""
 
 while True:
-    pirmas = input("Įveskite eilutę: ")
+    pirmas = input("Įveskite norimą tekstą: ")
     if pirmas != "":
-        tekstas += pirmas + "\n"
+        eilutes += pirmas + "\n"
     else:
         break
 
-failo_pavadinimas = input("Įveskite failo pavadinimą: ")
+koks_pavadinimas = input("Įveskite norimą pavadinimą: ")
 
-with open(failo_pavadinimas + ".txt", "w", encoding="UTF-8") as failas:
-    failas.write(tekstas)
+with open(koks_pavadinimas + ".txt", "w", encoding="UTF-8") as file:
+    file.write(eilutes)
