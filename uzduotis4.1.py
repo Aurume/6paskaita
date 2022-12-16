@@ -7,7 +7,19 @@
 # Patarimas: import pickle
 import pickle
 
-zurnalas = []
+def nuskaitymas_is_failo():
+    try:
+        with open("pinigu_zurnalas.pkl", "rb") as file:
+            zurnalas = pickle.load(file)
+    except:
+        zurnalas = []
+    return zurnalas
+
+def irasymas_i_faila(pinigai):
+    with open("pinigu_knyga.pkl", "w") as file:
+        pickle.dump(pinigai, file)
+
+zurnalas = nuskaitymas_is_failo()
 
 while True:
     veiksmas = int(input("""
@@ -26,7 +38,7 @@ while True:
         case 3:
             print("Balansas yra: ", sum(zurnalas))
         case 0:
-            print("Viso gero")
+            print("Viso gero!")
         case _:
             print("Neteisingas įvestas veiksmas")
 
