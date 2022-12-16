@@ -4,33 +4,27 @@
 # Pajamas ir išlaidas saugotų sąraše, o sąrašą pickle faile (uždarius programą, įvesti duomenys nedingtų)
 # Atvaizduotų jau įvestas pajamas ir išlaidas
 # Atvaizduotų įvestų pajamų ir išlaidų balansą (sudėtų visas pajamas ir išlaidas)
+# Patarimas: import pickle
+import pickle
 
-def nuskaitymas_is_failo():
-    pass
-def irasyti(skaiciai):
-    pass
-
-knyga = []
-zurnalas = nuskaitymas_is_failo()
+zurnalas = []
 
 while True:
-    veiksmas = eval(input("""
+    veiksmas = int(input("""
     1 - įvesti pajamas/išlaidas
     2 - parodyti pajamas/išlaidas
     3 - balansas
     0 - išeiti
     """))
 
-
     match veiksmas:
         case 1:
-            suma = eval(input("Įveskite sumą: "))
-            knyga.append(suma)
-            irasyti(knyga)
+            suma = float(input("Įveskite sumą: "))
+            zurnalas.append(suma)
         case 2:
-            print(knyga)
+            print(zurnalas)
         case 3:
-            print("Balansas yra: ", sum(knyga))
+            print("Balansas yra: ", sum(zurnalas))
         case 0:
             print("Viso gero")
         case _:
