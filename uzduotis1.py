@@ -24,19 +24,19 @@ If the implementation is easy to explain, it may be a good idea.
 Namespaces are one honking great idea -- let's do more of those!
 '''
 
-# Sukurtų failą „Tekstas.txt“ su pilnu tekstu, gauto python kode paleidus „import this“.
-# Atspausdintų tekstą iš sukurto failo
+# 1.1. Sukurtų failą „Tekstas.txt“ su pilnu tekstu, gauto python kode paleidus „import this“.
+# 1.2. Atspausdintų tekstą iš sukurto failo
 with open("tekstas.txt", "w") as file:
     file.write(eilerastis)
 
 with open("tekstas.txt", "r") as file:
     print(file.read())
 
-# Paskutinėje sukurto failo eilutėje pridėtų šiandienos datą ir laiką+
+# 1.3. Paskutinėje sukurto failo eilutėje pridėtų šiandienos datą ir laiką+
 with open("tekstas.txt", "a") as file:
     file.write(str(datetime.datetime.today()))
 
-# Sunumeruotų teksto eilutes (kiekvienos pradžioje pridėtų skaičių).+
+# 1.4. Sunumeruotų teksto eilutes (kiekvienos pradžioje pridėtų skaičių).+
 
 numeracija = ""
     #skaicius = 1
@@ -46,7 +46,7 @@ with open("tekstas.txt", "r") as file:
 
 print(numeracija)
 
-# Sukurtame faile eilutę "Beautiful is better than ugly."
+# 1.5. Sukurtame faile eilutę "Beautiful is better than ugly."
 # pakeistų į "Gražu yra geriau nei bjauru."
 
 keiciamas = ""
@@ -59,12 +59,12 @@ keiciamas = keiciamas.replace("Beautiful is better than ugly.", "Gražu yra geri
 with open("tekstas.txt", "w", encoding="UTF-8") as file:
     file.write(keiciamas)
 
-# Atspausdintų visą failo tekstą atbulai
+#1.6 Atspausdintų visą failo tekstą atbulai
 
 with open("tekstas.txt", "r") as file:
     print(file.read()[::-1])
 
-# Atspausdintų, kiek failo tekste
+#1.7. Atspausdintų, kiek failo tekste
 # yra žodžių, skaičių, didžiųjų ir mažųjų raidžių.
 
 with open("tekstas.txt", "r") as file:
@@ -76,5 +76,7 @@ kiek_mazuju = sum(x.islower() for x in zodz_raid_sk)
 kiek_skaiciu = sum(x.isnumeric() for x in zodz_raid_sk)
 print(f"1.7. Žodžiai: {kiek_zodziu}, \n     Didžiosios raidės: {kiek_didziuju}, \n     Mažosios raidės: {kiek_mazuju}, \n     Skaičių yra: {kiek_skaiciu}.")
 
-# Nukopijuotų visą sukurto failą tekstą į naują failą, tik DIDŽIOSIOMIS RAIDĖMIS
-
+#1.8. Nukopijuotų visą sukurto failą tekstą į naują failą, tik DIDŽIOSIOMIS RAIDĖMIS
+with open ("tekstas.txt", "r") as skaitomas:
+    with open("dideles_raides.txt", "w") as naujas:
+        naujas.write(skaitomas.read().upper())
